@@ -11,9 +11,13 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { MaterialModule } from './material/material.module';
+import { AppRouting } from './app.routing';
+import { PageNotFoundComponent } from './not-found/page-not-found.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, PageNotFoundComponent, AboutComponent],
   imports: [
     CommonModule,
     BrowserModule,
@@ -22,6 +26,8 @@ import { RouterModule } from '@angular/router';
     BrowserAnimationsModule,
     RouterModule.forRoot([]),
     AuthenticationModule,
+    MaterialModule,
+    AppRouting,
   ],
   providers: [AngularFireAuth, AngularFireDatabase],
   bootstrap: [AppComponent],
